@@ -11,6 +11,9 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/rootfs'
       - '--web.listen-address=:7576'
 
   # ── Real-time web UI (http://localhost:7575)
